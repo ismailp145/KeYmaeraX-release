@@ -34,6 +34,7 @@ abstract class SMTConverter extends (Formula => String) {
   // Prefixes that SMT accepts but NamedSymbol would refuse to make disjoint by construction
   private val VAR_PREFIX = "_v_"
   private val FUNC_PREFIX = "_f_"
+  private val PRED_PREFIX = "_p_"
   private val DIFFSYMBOL_PREFIX = "_d_"
 
   private val SMT_ABS = "absolute"
@@ -79,7 +80,7 @@ abstract class SMTConverter extends (Formula => String) {
           if (SMT_INTERPRETED_FUNCTIONS.contains(fn)) SMT_INTERPRETED_FUNCTIONS(fn)
           else throw ConversionException("Conversion of interpreted function " + fn.prettyString + " not supported")
         case fn @ Function(_, _, _, _, None) =>
-          require(fn.sort == Real, "Only support functions of type real, but not " + fn.sort)
+          // require(fn.sort == Real, "Only support functions of type real, but not " + fn.sort)
           "(declare-fun " + nameIdentifier(fn) + " (" + generateFuncParamSorts(fn.domain) + ") " + fn.sort + ")"
       })
       .mkString("\n")
@@ -92,16 +93,17 @@ abstract class SMTConverter extends (Formula => String) {
 
   /** Identifier corresponding to a NamedSymbol including its index and a type-specific prefix. */
   private def nameIdentifier(s: NamedSymbol): String = {
-    require(
-      s.sort == Real,
-      "Only real-valued symbols are currently supported, but got " + s.prettyString + " of sort " + s.sort,
-    )
+    // require(
+    //   s.sort == Real,
+    //   "Only real-valued symbols are currently supported, but got " + s.prettyString + " of sort " + s.sort,
+    // )
     def nameOf(n: String, i: Option[Int]): String = if (i.isEmpty) n else n + "_" + i.get
     s match {
       case InterpretedSymbols.minF => SMT_MIN
       case InterpretedSymbols.maxF => SMT_MAX
       case InterpretedSymbols.absF => SMT_ABS
-      case Function(name, index, _, _, None) => FUNC_PREFIX + nameOf(name, index)
+      case Function(name, index, _, Bool, None) => PRED_PREFIX + nameOf(name, index)
+      case Function(name, index, _, Real, None) => FUNC_PREFIX + nameOf(name, index)
       case BaseVariable(name, index, _) => VAR_PREFIX + nameOf(name, index)
       case DifferentialSymbol(BaseVariable(name, index, _)) => DIFFSYMBOL_PREFIX + nameOf(name, index)
       case _ => throw ConversionException("Name conversion of " + s.prettyString + " not supported")
@@ -158,6 +160,7 @@ abstract class SMTConverter extends (Formula => String) {
     case e: Exists => convertQuantified(e, "exists")
     case m: Modal =>
       throw ConversionException("There is no conversion from modalities with hybrid programs to SMT " + m)
+    case PredOf(p, Nothing) => nameIdentifier(p)
   }
 
   /** Convert KeYmaera X term to string in SMT notation */

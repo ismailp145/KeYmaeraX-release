@@ -1,0 +1,175 @@
+{
+    "version": "1.4.0",
+    "project": {
+        "name": "root-test",
+        "directory": "/Users/ismail/Projects/KeYmaeraX-release",
+        "workspaceDir": "/Users/ismail/Projects/KeYmaeraX-release",
+        "sources": [
+            "/Users/ismail/Projects/KeYmaeraX-release/src/test/scala",
+            "/Users/ismail/Projects/KeYmaeraX-release/src/test/scala-2.13",
+            "/Users/ismail/Projects/KeYmaeraX-release/src/test/scala-2",
+            "/Users/ismail/Projects/KeYmaeraX-release/src/test/java",
+            "/Users/ismail/Projects/KeYmaeraX-release/target/scala-2.13/src_managed/test"
+        ],
+        "dependencies": [
+            "root",
+            "macros-test",
+            "core-test",
+            "webui-test"
+        ],
+        "classpath": [
+            "/Users/ismail/Projects/KeYmaeraX-release/.bloop/root/scala-2.13/classes",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.13/scala-library-2.13.13.jar"
+        ],
+        "out": "/Users/ismail/Projects/KeYmaeraX-release/.bloop/root",
+        "classesDir": "/Users/ismail/Projects/KeYmaeraX-release/.bloop/root/scala-2.13/test-classes",
+        "resources": [
+            "/Users/ismail/Projects/KeYmaeraX-release/src/test/resources",
+            "/Users/ismail/Projects/KeYmaeraX-release/target/scala-2.13/resource_managed/test"
+        ],
+        "scala": {
+            "organization": "org.scala-lang",
+            "name": "scala-compiler",
+            "version": "2.13.13",
+            "options": [
+                "-Wconf:site=edu.cmu.cs.ls.keymaerax.core.*:w,site=edu.cmu.cs.ls.keymaerax.info.*:w,cat=deprecation&origin=edu.cmu.cs.ls.keymaerax.*:s,cat=other-match-analysis:s,cat=unchecked&msg=Exhaustivity analysis:s,cat=unchecked&msg=erasure:s,cat=deprecation:ws,cat=feature:ws,cat=optimizer:ws",
+                "-Xmaxwarns",
+                "1000",
+                "-Ymacro-annotations"
+            ],
+            "jars": [
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.13/scala-library-2.13.13.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.13.13/scala-compiler-2.13.13.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.13.13/scala-reflect-2.13.13.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/github/java-diff-utils/java-diff-utils/4.12/java-diff-utils-4.12.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/jline/jline/3.24.1/jline-3.24.1.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/net/java/dev/jna/jna/5.13.0/jna-5.13.0.jar"
+            ],
+            "setup": {
+                "order": "mixed",
+                "addLibraryToBootClasspath": true,
+                "addCompilerToClasspath": false,
+                "addExtraJarsToClasspath": false,
+                "manageBootClasspath": true,
+                "filterLibraryFromClasspath": true
+            }
+        },
+        "java": {
+            "options": [
+                
+            ]
+        },
+        "test": {
+            "frameworks": [
+                {
+                    "names": [
+                        "org.scalacheck.ScalaCheckFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.specs2.runner.Specs2Framework",
+                        "org.specs2.runner.SpecsFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.specs.runner.SpecsFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.scalatest.tools.Framework",
+                        "org.scalatest.tools.ScalaTestFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "com.novocode.junit.JUnitFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "munit.Framework"
+                    ]
+                },
+                {
+                    "names": [
+                        "zio.test.sbt.ZTestFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "weaver.framework.CatsEffect"
+                    ]
+                },
+                {
+                    "names": [
+                        "hedgehog.sbt.Framework"
+                    ]
+                }
+            ],
+            "options": {
+                "excludes": [
+                    
+                ],
+                "arguments": [
+                    
+                ]
+            }
+        },
+        "platform": {
+            "name": "jvm",
+            "config": {
+                "home": "/Library/Java/JavaVirtualMachines/jdk-19.jdk/Contents/Home",
+                "options": [
+                    "-Duser.dir=/Users/ismail/Projects/KeYmaeraX-release"
+                ]
+            },
+            "mainClass": [
+                
+            ]
+        },
+        "resolution": {
+            "modules": [
+                {
+                    "organization": "org.scala-lang",
+                    "name": "scala-library",
+                    "version": "2.13.13",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "scala-library",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.13/scala-library-2.13.13.jar"
+                        },
+                        {
+                            "name": "scala-library",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.13/scala-library-2.13.13-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.scala-lang",
+                    "name": "scala-library",
+                    "version": "2.13.13",
+                    "configurations": "optional",
+                    "artifacts": [
+                        {
+                            "name": "scala-library",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.13/scala-library-2.13.13.jar"
+                        },
+                        {
+                            "name": "scala-library",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.13/scala-library-2.13.13-sources.jar"
+                        }
+                    ]
+                }
+            ]
+        },
+        "tags": [
+            "test"
+        ]
+    }
+}

@@ -1,0 +1,1236 @@
+{
+    "version": "1.4.0",
+    "project": {
+        "name": "webui",
+        "directory": "/Users/ismail/Projects/KeYmaeraX-release/keymaerax-webui",
+        "workspaceDir": "/Users/ismail/Projects/KeYmaeraX-release",
+        "sources": [
+            "/Users/ismail/Projects/KeYmaeraX-release/keymaerax-webui/src/main/scala",
+            "/Users/ismail/Projects/KeYmaeraX-release/keymaerax-webui/src/main/scala-2.13",
+            "/Users/ismail/Projects/KeYmaeraX-release/keymaerax-webui/src/main/scala-2",
+            "/Users/ismail/Projects/KeYmaeraX-release/keymaerax-webui/src/main/java",
+            "/Users/ismail/Projects/KeYmaeraX-release/keymaerax-webui/target/scala-2.13/src_managed/main"
+        ],
+        "dependencies": [
+            "macros",
+            "core"
+        ],
+        "classpath": [
+            "/Users/ismail/Projects/KeYmaeraX-release/.bloop/macros/scala-2.13/classes",
+            "/Users/ismail/Projects/KeYmaeraX-release/.bloop/core/scala-2.13/classes",
+            "/Applications/Wolfram Engine.app/Contents/Resources/Wolfram Player.app/Contents/SystemFiles/Links/JLink/JLink.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.13/scala-library-2.13.13.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/slick/slick_2.13/3.5.1/slick_2.13-3.5.1.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/slick/slick-codegen_2.13/3.5.1/slick-codegen_2.13-3.5.1.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/xerial/sqlite-jdbc/3.45.3.0/sqlite-jdbc-3.45.3.0.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-http_2.13/10.5.3/akka-http_2.13-10.5.3.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-http-spray-json_2.13/10.5.3/akka-http-spray-json_2.13-10.5.3.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-http-xml_2.13/10.5.3/akka-http-xml_2.13-10.5.3.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-slf4j_2.13/2.8.5/akka-slf4j_2.13-2.8.5.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-stream_2.13/2.8.5/akka-stream_2.13-2.8.5.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/spray/spray-json_2.13/1.3.6/spray-json_2.13-1.3.6.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.13.13/scala-reflect-2.13.13.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.13.13/scala-compiler-2.13.13.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/cc/redberry/rings.scaladsl_2.13/2.5.8/rings.scaladsl_2.13-2.5.8.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/github/scopt/scopt_2.13/4.1.0/scopt_2.13-4.1.0.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/lihaoyi/fastparse_2.13/3.1.0/fastparse_2.13-3.1.0.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/commons/commons-configuration2/2.10.1/commons-configuration2-2.10.1.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/commons/commons-lang3/3.14.0/commons-lang3-3.14.0.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/reflections/reflections/0.10.2/reflections-0.10.2.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/paiges-core_2.13/0.4.3/paiges-core_2.13-0.4.3.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/spire_2.13/0.18.0/spire_2.13-0.18.0.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/biz/enef/slogging-slf4j_2.13/0.6.2/slogging-slf4j_2.13-0.6.2.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/logging/log4j/log4j-api/2.23.1/log4j-api-2.23.1.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/logging/log4j/log4j-core/2.23.1/log4j-core-2.23.1.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/logging/log4j/log4j-slf4j2-impl/2.23.1/log4j-slf4j2-impl-2.23.1.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/regblanc/scala-smtlib_2.13/0.2.1-42-gc68dbaa/scala-smtlib_2.13-0.2.1-42-gc68dbaa.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/slf4j/slf4j-api/2.0.13/slf4j-api-2.0.13.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/config/1.4.3/config-1.4.3.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/reactivestreams/reactive-streams/1.0.4/reactive-streams-1.0.4.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-http-core_2.13/10.5.3/akka-http-core_2.13-10.5.3.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_2.13/2.1.0/scala-xml_2.13-2.1.0.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-actor_2.13/2.8.5/akka-actor_2.13-2.8.5.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-protobuf-v3_2.13/2.8.5/akka-protobuf-v3_2.13-2.8.5.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/ssl-config-core_2.13/0.6.1/ssl-config-core_2.13-0.6.1.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/github/java-diff-utils/java-diff-utils/4.12/java-diff-utils-4.12.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/jline/jline/3.24.1/jline-3.24.1.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/net/java/dev/jna/jna/5.13.0/jna-5.13.0.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/cc/redberry/rings/2.5.8/rings-2.5.8.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/lihaoyi/sourcecode_2.13/0.4.0/sourcecode_2.13-0.4.0.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/lihaoyi/geny_2.13/1.1.0/geny_2.13-1.1.0.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/commons/commons-text/1.11.0/commons-text-1.11.0.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/commons-logging/commons-logging/1.3.0/commons-logging-1.3.0.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/javassist/javassist/3.28.0-GA/javassist-3.28.0-GA.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/spire-macros_2.13/0.18.0/spire-macros_2.13-0.18.0.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/spire-platform_2.13/0.18.0/spire-platform_2.13-0.18.0.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/spire-util_2.13/0.18.0/spire-util_2.13-0.18.0.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/algebra_2.13/2.8.0/algebra_2.13-2.8.0.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/biz/enef/slogging_2.13/0.6.2/slogging_2.13-0.6.2.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-parsing_2.13/10.5.3/akka-parsing_2.13-10.5.3.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-java8-compat_2.13/1.0.0/scala-java8-compat_2.13-1.0.0.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/cc/redberry/libdivide4j/1.2/libdivide4j-1.2.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/cc/redberry/combinatorics/2.1/combinatorics-2.1.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/net/sf/trove4j/trove4j/3.0.3/trove4j-3.0.3.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar",
+            "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-kernel_2.13/2.8.0/cats-kernel_2.13-2.8.0.jar"
+        ],
+        "out": "/Users/ismail/Projects/KeYmaeraX-release/.bloop/webui",
+        "classesDir": "/Users/ismail/Projects/KeYmaeraX-release/.bloop/webui/scala-2.13/classes",
+        "resources": [
+            "/Users/ismail/Projects/KeYmaeraX-release/keymaerax-webui/src/main/resources",
+            "/Users/ismail/Projects/KeYmaeraX-release/keymaerax-webui/target/scala-2.13/resource_managed/main"
+        ],
+        "scala": {
+            "organization": "org.scala-lang",
+            "name": "scala-compiler",
+            "version": "2.13.13",
+            "options": [
+                "-Wconf:site=edu.cmu.cs.ls.keymaerax.core.*:w,site=edu.cmu.cs.ls.keymaerax.info.*:w,cat=deprecation&origin=edu.cmu.cs.ls.keymaerax.*:s,cat=other-match-analysis:s,cat=unchecked&msg=Exhaustivity analysis:s,cat=unchecked&msg=erasure:s,cat=deprecation:ws,cat=feature:ws,cat=optimizer:ws",
+                "-Xmaxwarns",
+                "1000",
+                "-Ymacro-annotations"
+            ],
+            "jars": [
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.13/scala-library-2.13.13.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.13.13/scala-compiler-2.13.13.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.13.13/scala-reflect-2.13.13.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/github/java-diff-utils/java-diff-utils/4.12/java-diff-utils-4.12.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/jline/jline/3.24.1/jline-3.24.1.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/net/java/dev/jna/jna/5.13.0/jna-5.13.0.jar"
+            ],
+            "setup": {
+                "order": "mixed",
+                "addLibraryToBootClasspath": true,
+                "addCompilerToClasspath": false,
+                "addExtraJarsToClasspath": false,
+                "manageBootClasspath": true,
+                "filterLibraryFromClasspath": true
+            }
+        },
+        "java": {
+            "options": [
+                
+            ]
+        },
+        "test": {
+            "frameworks": [
+                {
+                    "names": [
+                        "org.scalacheck.ScalaCheckFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.specs2.runner.Specs2Framework",
+                        "org.specs2.runner.SpecsFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.specs.runner.SpecsFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.scalatest.tools.Framework",
+                        "org.scalatest.tools.ScalaTestFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "com.novocode.junit.JUnitFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "munit.Framework"
+                    ]
+                },
+                {
+                    "names": [
+                        "zio.test.sbt.ZTestFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "weaver.framework.CatsEffect"
+                    ]
+                },
+                {
+                    "names": [
+                        "hedgehog.sbt.Framework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.scalameter.ScalaMeterFramework"
+                    ]
+                }
+            ],
+            "options": {
+                "excludes": [
+                    
+                ],
+                "arguments": [
+                    
+                ]
+            }
+        },
+        "platform": {
+            "name": "jvm",
+            "config": {
+                "home": "/Library/Java/JavaVirtualMachines/jdk-19.jdk/Contents/Home",
+                "options": [
+                    "-Duser.dir=/Users/ismail/Projects/KeYmaeraX-release"
+                ]
+            },
+            "mainClass": [
+                
+            ],
+            "runtimeConfig": {
+                "home": "/Library/Java/JavaVirtualMachines/jdk-19.jdk/Contents/Home",
+                "options": [
+                    "-Duser.dir=/Users/ismail/Projects/KeYmaeraX-release"
+                ]
+            },
+            "classpath": [
+                "/Users/ismail/Projects/KeYmaeraX-release/.bloop/webui/scala-2.13/classes",
+                "/Users/ismail/Projects/KeYmaeraX-release/.bloop/macros/scala-2.13/classes",
+                "/Users/ismail/Projects/KeYmaeraX-release/.bloop/core/scala-2.13/classes",
+                "/Applications/Wolfram Engine.app/Contents/Resources/Wolfram Player.app/Contents/SystemFiles/Links/JLink/JLink.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.13/scala-library-2.13.13.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/slick/slick_2.13/3.5.1/slick_2.13-3.5.1.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/slick/slick-codegen_2.13/3.5.1/slick-codegen_2.13-3.5.1.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/xerial/sqlite-jdbc/3.45.3.0/sqlite-jdbc-3.45.3.0.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-http_2.13/10.5.3/akka-http_2.13-10.5.3.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-http-spray-json_2.13/10.5.3/akka-http-spray-json_2.13-10.5.3.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-http-xml_2.13/10.5.3/akka-http-xml_2.13-10.5.3.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-slf4j_2.13/2.8.5/akka-slf4j_2.13-2.8.5.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-stream_2.13/2.8.5/akka-stream_2.13-2.8.5.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/spray/spray-json_2.13/1.3.6/spray-json_2.13-1.3.6.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.13.13/scala-reflect-2.13.13.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.13.13/scala-compiler-2.13.13.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/cc/redberry/rings.scaladsl_2.13/2.5.8/rings.scaladsl_2.13-2.5.8.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/github/scopt/scopt_2.13/4.1.0/scopt_2.13-4.1.0.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/lihaoyi/fastparse_2.13/3.1.0/fastparse_2.13-3.1.0.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/commons/commons-configuration2/2.10.1/commons-configuration2-2.10.1.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/commons/commons-lang3/3.14.0/commons-lang3-3.14.0.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/reflections/reflections/0.10.2/reflections-0.10.2.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/paiges-core_2.13/0.4.3/paiges-core_2.13-0.4.3.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/spire_2.13/0.18.0/spire_2.13-0.18.0.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/biz/enef/slogging-slf4j_2.13/0.6.2/slogging-slf4j_2.13-0.6.2.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/logging/log4j/log4j-api/2.23.1/log4j-api-2.23.1.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/logging/log4j/log4j-core/2.23.1/log4j-core-2.23.1.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/logging/log4j/log4j-slf4j2-impl/2.23.1/log4j-slf4j2-impl-2.23.1.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/regblanc/scala-smtlib_2.13/0.2.1-42-gc68dbaa/scala-smtlib_2.13-0.2.1-42-gc68dbaa.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/slf4j/slf4j-api/2.0.13/slf4j-api-2.0.13.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/config/1.4.3/config-1.4.3.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/reactivestreams/reactive-streams/1.0.4/reactive-streams-1.0.4.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-http-core_2.13/10.5.3/akka-http-core_2.13-10.5.3.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_2.13/2.1.0/scala-xml_2.13-2.1.0.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-actor_2.13/2.8.5/akka-actor_2.13-2.8.5.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-protobuf-v3_2.13/2.8.5/akka-protobuf-v3_2.13-2.8.5.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/ssl-config-core_2.13/0.6.1/ssl-config-core_2.13-0.6.1.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/github/java-diff-utils/java-diff-utils/4.12/java-diff-utils-4.12.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/jline/jline/3.24.1/jline-3.24.1.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/net/java/dev/jna/jna/5.13.0/jna-5.13.0.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/cc/redberry/rings/2.5.8/rings-2.5.8.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/lihaoyi/sourcecode_2.13/0.4.0/sourcecode_2.13-0.4.0.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/lihaoyi/geny_2.13/1.1.0/geny_2.13-1.1.0.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/commons/commons-text/1.11.0/commons-text-1.11.0.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/commons-logging/commons-logging/1.3.0/commons-logging-1.3.0.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/javassist/javassist/3.28.0-GA/javassist-3.28.0-GA.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/spire-macros_2.13/0.18.0/spire-macros_2.13-0.18.0.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/spire-platform_2.13/0.18.0/spire-platform_2.13-0.18.0.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/spire-util_2.13/0.18.0/spire-util_2.13-0.18.0.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/algebra_2.13/2.8.0/algebra_2.13-2.8.0.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/biz/enef/slogging_2.13/0.6.2/slogging_2.13-0.6.2.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-parsing_2.13/10.5.3/akka-parsing_2.13-10.5.3.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-java8-compat_2.13/1.0.0/scala-java8-compat_2.13-1.0.0.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/cc/redberry/libdivide4j/1.2/libdivide4j-1.2.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/cc/redberry/combinatorics/2.1/combinatorics-2.1.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/net/sf/trove4j/trove4j/3.0.3/trove4j-3.0.3.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar",
+                "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-kernel_2.13/2.8.0/cats-kernel_2.13-2.8.0.jar"
+            ]
+        },
+        "resolution": {
+            "modules": [
+                {
+                    "organization": "org.scala-lang",
+                    "name": "scala-library",
+                    "version": "2.13.13",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "scala-library",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.13/scala-library-2.13.13.jar"
+                        },
+                        {
+                            "name": "scala-library",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.13/scala-library-2.13.13-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.typesafe.slick",
+                    "name": "slick_2.13",
+                    "version": "3.5.1",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "slick_2.13",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/slick/slick_2.13/3.5.1/slick_2.13-3.5.1.jar"
+                        },
+                        {
+                            "name": "slick_2.13",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/slick/slick_2.13/3.5.1/slick_2.13-3.5.1-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.typesafe.slick",
+                    "name": "slick-codegen_2.13",
+                    "version": "3.5.1",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "slick-codegen_2.13",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/slick/slick-codegen_2.13/3.5.1/slick-codegen_2.13-3.5.1.jar"
+                        },
+                        {
+                            "name": "slick-codegen_2.13",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/slick/slick-codegen_2.13/3.5.1/slick-codegen_2.13-3.5.1-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.xerial",
+                    "name": "sqlite-jdbc",
+                    "version": "3.45.3.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "sqlite-jdbc",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/xerial/sqlite-jdbc/3.45.3.0/sqlite-jdbc-3.45.3.0.jar"
+                        },
+                        {
+                            "name": "sqlite-jdbc",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/xerial/sqlite-jdbc/3.45.3.0/sqlite-jdbc-3.45.3.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.typesafe.akka",
+                    "name": "akka-http_2.13",
+                    "version": "10.5.3",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "akka-http_2.13",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-http_2.13/10.5.3/akka-http_2.13-10.5.3.jar"
+                        },
+                        {
+                            "name": "akka-http_2.13",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-http_2.13/10.5.3/akka-http_2.13-10.5.3-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.typesafe.akka",
+                    "name": "akka-http-spray-json_2.13",
+                    "version": "10.5.3",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "akka-http-spray-json_2.13",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-http-spray-json_2.13/10.5.3/akka-http-spray-json_2.13-10.5.3.jar"
+                        },
+                        {
+                            "name": "akka-http-spray-json_2.13",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-http-spray-json_2.13/10.5.3/akka-http-spray-json_2.13-10.5.3-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.typesafe.akka",
+                    "name": "akka-http-xml_2.13",
+                    "version": "10.5.3",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "akka-http-xml_2.13",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-http-xml_2.13/10.5.3/akka-http-xml_2.13-10.5.3.jar"
+                        },
+                        {
+                            "name": "akka-http-xml_2.13",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-http-xml_2.13/10.5.3/akka-http-xml_2.13-10.5.3-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.typesafe.akka",
+                    "name": "akka-slf4j_2.13",
+                    "version": "2.8.5",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "akka-slf4j_2.13",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-slf4j_2.13/2.8.5/akka-slf4j_2.13-2.8.5.jar"
+                        },
+                        {
+                            "name": "akka-slf4j_2.13",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-slf4j_2.13/2.8.5/akka-slf4j_2.13-2.8.5-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.typesafe.akka",
+                    "name": "akka-stream_2.13",
+                    "version": "2.8.5",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "akka-stream_2.13",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-stream_2.13/2.8.5/akka-stream_2.13-2.8.5.jar"
+                        },
+                        {
+                            "name": "akka-stream_2.13",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-stream_2.13/2.8.5/akka-stream_2.13-2.8.5-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "io.spray",
+                    "name": "spray-json_2.13",
+                    "version": "1.3.6",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "spray-json_2.13",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/spray/spray-json_2.13/1.3.6/spray-json_2.13-1.3.6.jar"
+                        },
+                        {
+                            "name": "spray-json_2.13",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/spray/spray-json_2.13/1.3.6/spray-json_2.13-1.3.6-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.scala-lang",
+                    "name": "scala-reflect",
+                    "version": "2.13.13",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "scala-reflect",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.13.13/scala-reflect-2.13.13.jar"
+                        },
+                        {
+                            "name": "scala-reflect",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.13.13/scala-reflect-2.13.13-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.scala-lang",
+                    "name": "scala-compiler",
+                    "version": "2.13.13",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "scala-compiler",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.13.13/scala-compiler-2.13.13.jar"
+                        },
+                        {
+                            "name": "scala-compiler",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.13.13/scala-compiler-2.13.13-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "cc.redberry",
+                    "name": "rings.scaladsl_2.13",
+                    "version": "2.5.8",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "rings.scaladsl_2.13",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/cc/redberry/rings.scaladsl_2.13/2.5.8/rings.scaladsl_2.13-2.5.8.jar"
+                        },
+                        {
+                            "name": "rings.scaladsl_2.13",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/cc/redberry/rings.scaladsl_2.13/2.5.8/rings.scaladsl_2.13-2.5.8-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.github.scopt",
+                    "name": "scopt_2.13",
+                    "version": "4.1.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "scopt_2.13",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/github/scopt/scopt_2.13/4.1.0/scopt_2.13-4.1.0.jar"
+                        },
+                        {
+                            "name": "scopt_2.13",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/github/scopt/scopt_2.13/4.1.0/scopt_2.13-4.1.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.lihaoyi",
+                    "name": "fastparse_2.13",
+                    "version": "3.1.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "fastparse_2.13",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/lihaoyi/fastparse_2.13/3.1.0/fastparse_2.13-3.1.0.jar"
+                        },
+                        {
+                            "name": "fastparse_2.13",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/lihaoyi/fastparse_2.13/3.1.0/fastparse_2.13-3.1.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.apache.commons",
+                    "name": "commons-configuration2",
+                    "version": "2.10.1",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "commons-configuration2",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/commons/commons-configuration2/2.10.1/commons-configuration2-2.10.1.jar"
+                        },
+                        {
+                            "name": "commons-configuration2",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/commons/commons-configuration2/2.10.1/commons-configuration2-2.10.1-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.apache.commons",
+                    "name": "commons-lang3",
+                    "version": "3.14.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "commons-lang3",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/commons/commons-lang3/3.14.0/commons-lang3-3.14.0.jar"
+                        },
+                        {
+                            "name": "commons-lang3",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/commons/commons-lang3/3.14.0/commons-lang3-3.14.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.reflections",
+                    "name": "reflections",
+                    "version": "0.10.2",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "reflections",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/reflections/reflections/0.10.2/reflections-0.10.2.jar"
+                        },
+                        {
+                            "name": "reflections",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/reflections/reflections/0.10.2/reflections-0.10.2-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.typelevel",
+                    "name": "paiges-core_2.13",
+                    "version": "0.4.3",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "paiges-core_2.13",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/paiges-core_2.13/0.4.3/paiges-core_2.13-0.4.3.jar"
+                        },
+                        {
+                            "name": "paiges-core_2.13",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/paiges-core_2.13/0.4.3/paiges-core_2.13-0.4.3-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.typelevel",
+                    "name": "spire_2.13",
+                    "version": "0.18.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "spire_2.13",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/spire_2.13/0.18.0/spire_2.13-0.18.0.jar"
+                        },
+                        {
+                            "name": "spire_2.13",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/spire_2.13/0.18.0/spire_2.13-0.18.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "biz.enef",
+                    "name": "slogging-slf4j_2.13",
+                    "version": "0.6.2",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "slogging-slf4j_2.13",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/biz/enef/slogging-slf4j_2.13/0.6.2/slogging-slf4j_2.13-0.6.2.jar"
+                        },
+                        {
+                            "name": "slogging-slf4j_2.13",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/biz/enef/slogging-slf4j_2.13/0.6.2/slogging-slf4j_2.13-0.6.2-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.apache.logging.log4j",
+                    "name": "log4j-api",
+                    "version": "2.23.1",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "log4j-api",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/logging/log4j/log4j-api/2.23.1/log4j-api-2.23.1.jar"
+                        },
+                        {
+                            "name": "log4j-api",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/logging/log4j/log4j-api/2.23.1/log4j-api-2.23.1-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.apache.logging.log4j",
+                    "name": "log4j-core",
+                    "version": "2.23.1",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "log4j-core",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/logging/log4j/log4j-core/2.23.1/log4j-core-2.23.1.jar"
+                        },
+                        {
+                            "name": "log4j-core",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/logging/log4j/log4j-core/2.23.1/log4j-core-2.23.1-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.apache.logging.log4j",
+                    "name": "log4j-slf4j2-impl",
+                    "version": "2.23.1",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "log4j-slf4j2-impl",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/logging/log4j/log4j-slf4j2-impl/2.23.1/log4j-slf4j2-impl-2.23.1.jar"
+                        },
+                        {
+                            "name": "log4j-slf4j2-impl",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/logging/log4j/log4j-slf4j2-impl/2.23.1/log4j-slf4j2-impl-2.23.1-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.regblanc",
+                    "name": "scala-smtlib_2.13",
+                    "version": "0.2.1-42-gc68dbaa",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "scala-smtlib_2.13",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/regblanc/scala-smtlib_2.13/0.2.1-42-gc68dbaa/scala-smtlib_2.13-0.2.1-42-gc68dbaa.jar"
+                        },
+                        {
+                            "name": "scala-smtlib_2.13",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/regblanc/scala-smtlib_2.13/0.2.1-42-gc68dbaa/scala-smtlib_2.13-0.2.1-42-gc68dbaa-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.slf4j",
+                    "name": "slf4j-api",
+                    "version": "2.0.13",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "slf4j-api",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/slf4j/slf4j-api/2.0.13/slf4j-api-2.0.13.jar"
+                        },
+                        {
+                            "name": "slf4j-api",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/slf4j/slf4j-api/2.0.13/slf4j-api-2.0.13-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.typesafe",
+                    "name": "config",
+                    "version": "1.4.3",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "config",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/config/1.4.3/config-1.4.3.jar"
+                        },
+                        {
+                            "name": "config",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/config/1.4.3/config-1.4.3-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.reactivestreams",
+                    "name": "reactive-streams",
+                    "version": "1.0.4",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "reactive-streams",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/reactivestreams/reactive-streams/1.0.4/reactive-streams-1.0.4.jar"
+                        },
+                        {
+                            "name": "reactive-streams",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/reactivestreams/reactive-streams/1.0.4/reactive-streams-1.0.4-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.typesafe.akka",
+                    "name": "akka-http-core_2.13",
+                    "version": "10.5.3",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "akka-http-core_2.13",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-http-core_2.13/10.5.3/akka-http-core_2.13-10.5.3.jar"
+                        },
+                        {
+                            "name": "akka-http-core_2.13",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-http-core_2.13/10.5.3/akka-http-core_2.13-10.5.3-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.scala-lang.modules",
+                    "name": "scala-xml_2.13",
+                    "version": "2.1.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "scala-xml_2.13",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_2.13/2.1.0/scala-xml_2.13-2.1.0.jar"
+                        },
+                        {
+                            "name": "scala-xml_2.13",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_2.13/2.1.0/scala-xml_2.13-2.1.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.typesafe.akka",
+                    "name": "akka-actor_2.13",
+                    "version": "2.8.5",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "akka-actor_2.13",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-actor_2.13/2.8.5/akka-actor_2.13-2.8.5.jar"
+                        },
+                        {
+                            "name": "akka-actor_2.13",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-actor_2.13/2.8.5/akka-actor_2.13-2.8.5-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.typesafe.akka",
+                    "name": "akka-protobuf-v3_2.13",
+                    "version": "2.8.5",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "akka-protobuf-v3_2.13",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-protobuf-v3_2.13/2.8.5/akka-protobuf-v3_2.13-2.8.5.jar"
+                        },
+                        {
+                            "name": "akka-protobuf-v3_2.13",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-protobuf-v3_2.13/2.8.5/akka-protobuf-v3_2.13-2.8.5-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.typesafe",
+                    "name": "ssl-config-core_2.13",
+                    "version": "0.6.1",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "ssl-config-core_2.13",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/ssl-config-core_2.13/0.6.1/ssl-config-core_2.13-0.6.1.jar"
+                        },
+                        {
+                            "name": "ssl-config-core_2.13",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/ssl-config-core_2.13/0.6.1/ssl-config-core_2.13-0.6.1-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "io.github.java-diff-utils",
+                    "name": "java-diff-utils",
+                    "version": "4.12",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "java-diff-utils",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/github/java-diff-utils/java-diff-utils/4.12/java-diff-utils-4.12.jar"
+                        },
+                        {
+                            "name": "java-diff-utils",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/github/java-diff-utils/java-diff-utils/4.12/java-diff-utils-4.12-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.jline",
+                    "name": "jline",
+                    "version": "3.24.1",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "jline",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/jline/jline/3.24.1/jline-3.24.1.jar"
+                        },
+                        {
+                            "name": "jline",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/jline/jline/3.24.1/jline-3.24.1-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "net.java.dev.jna",
+                    "name": "jna",
+                    "version": "5.13.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "jna",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/net/java/dev/jna/jna/5.13.0/jna-5.13.0.jar"
+                        },
+                        {
+                            "name": "jna",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/net/java/dev/jna/jna/5.13.0/jna-5.13.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "cc.redberry",
+                    "name": "rings",
+                    "version": "2.5.8",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "rings",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/cc/redberry/rings/2.5.8/rings-2.5.8.jar"
+                        },
+                        {
+                            "name": "rings",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/cc/redberry/rings/2.5.8/rings-2.5.8-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.lihaoyi",
+                    "name": "sourcecode_2.13",
+                    "version": "0.4.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "sourcecode_2.13",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/lihaoyi/sourcecode_2.13/0.4.0/sourcecode_2.13-0.4.0.jar"
+                        },
+                        {
+                            "name": "sourcecode_2.13",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/lihaoyi/sourcecode_2.13/0.4.0/sourcecode_2.13-0.4.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.lihaoyi",
+                    "name": "geny_2.13",
+                    "version": "1.1.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "geny_2.13",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/lihaoyi/geny_2.13/1.1.0/geny_2.13-1.1.0.jar"
+                        },
+                        {
+                            "name": "geny_2.13",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/lihaoyi/geny_2.13/1.1.0/geny_2.13-1.1.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.apache.commons",
+                    "name": "commons-text",
+                    "version": "1.11.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "commons-text",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/commons/commons-text/1.11.0/commons-text-1.11.0.jar"
+                        },
+                        {
+                            "name": "commons-text",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/commons/commons-text/1.11.0/commons-text-1.11.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "commons-logging",
+                    "name": "commons-logging",
+                    "version": "1.3.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "commons-logging",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/commons-logging/commons-logging/1.3.0/commons-logging-1.3.0.jar"
+                        },
+                        {
+                            "name": "commons-logging",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/commons-logging/commons-logging/1.3.0/commons-logging-1.3.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.javassist",
+                    "name": "javassist",
+                    "version": "3.28.0-GA",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "javassist",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/javassist/javassist/3.28.0-GA/javassist-3.28.0-GA.jar"
+                        },
+                        {
+                            "name": "javassist",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/javassist/javassist/3.28.0-GA/javassist-3.28.0-GA-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.google.code.findbugs",
+                    "name": "jsr305",
+                    "version": "3.0.2",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "jsr305",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar"
+                        },
+                        {
+                            "name": "jsr305",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.typelevel",
+                    "name": "spire-macros_2.13",
+                    "version": "0.18.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "spire-macros_2.13",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/spire-macros_2.13/0.18.0/spire-macros_2.13-0.18.0.jar"
+                        },
+                        {
+                            "name": "spire-macros_2.13",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/spire-macros_2.13/0.18.0/spire-macros_2.13-0.18.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.typelevel",
+                    "name": "spire-platform_2.13",
+                    "version": "0.18.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "spire-platform_2.13",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/spire-platform_2.13/0.18.0/spire-platform_2.13-0.18.0.jar"
+                        },
+                        {
+                            "name": "spire-platform_2.13",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/spire-platform_2.13/0.18.0/spire-platform_2.13-0.18.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.typelevel",
+                    "name": "spire-util_2.13",
+                    "version": "0.18.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "spire-util_2.13",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/spire-util_2.13/0.18.0/spire-util_2.13-0.18.0.jar"
+                        },
+                        {
+                            "name": "spire-util_2.13",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/spire-util_2.13/0.18.0/spire-util_2.13-0.18.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.typelevel",
+                    "name": "algebra_2.13",
+                    "version": "2.8.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "algebra_2.13",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/algebra_2.13/2.8.0/algebra_2.13-2.8.0.jar"
+                        },
+                        {
+                            "name": "algebra_2.13",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/algebra_2.13/2.8.0/algebra_2.13-2.8.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "biz.enef",
+                    "name": "slogging_2.13",
+                    "version": "0.6.2",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "slogging_2.13",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/biz/enef/slogging_2.13/0.6.2/slogging_2.13-0.6.2.jar"
+                        },
+                        {
+                            "name": "slogging_2.13",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/biz/enef/slogging_2.13/0.6.2/slogging_2.13-0.6.2-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.typesafe.akka",
+                    "name": "akka-parsing_2.13",
+                    "version": "10.5.3",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "akka-parsing_2.13",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-parsing_2.13/10.5.3/akka-parsing_2.13-10.5.3.jar"
+                        },
+                        {
+                            "name": "akka-parsing_2.13",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-parsing_2.13/10.5.3/akka-parsing_2.13-10.5.3-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.scala-lang.modules",
+                    "name": "scala-java8-compat_2.13",
+                    "version": "1.0.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "scala-java8-compat_2.13",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-java8-compat_2.13/1.0.0/scala-java8-compat_2.13-1.0.0.jar"
+                        },
+                        {
+                            "name": "scala-java8-compat_2.13",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-java8-compat_2.13/1.0.0/scala-java8-compat_2.13-1.0.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "cc.redberry",
+                    "name": "libdivide4j",
+                    "version": "1.2",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "libdivide4j",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/cc/redberry/libdivide4j/1.2/libdivide4j-1.2.jar"
+                        },
+                        {
+                            "name": "libdivide4j",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/cc/redberry/libdivide4j/1.2/libdivide4j-1.2-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "cc.redberry",
+                    "name": "combinatorics",
+                    "version": "2.1",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "combinatorics",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/cc/redberry/combinatorics/2.1/combinatorics-2.1.jar"
+                        },
+                        {
+                            "name": "combinatorics",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/cc/redberry/combinatorics/2.1/combinatorics-2.1-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "net.sf.trove4j",
+                    "name": "trove4j",
+                    "version": "3.0.3",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "trove4j",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/net/sf/trove4j/trove4j/3.0.3/trove4j-3.0.3.jar"
+                        },
+                        {
+                            "name": "trove4j",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/net/sf/trove4j/trove4j/3.0.3/trove4j-3.0.3-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.apache.commons",
+                    "name": "commons-math3",
+                    "version": "3.6.1",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "commons-math3",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar"
+                        },
+                        {
+                            "name": "commons-math3",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.typelevel",
+                    "name": "cats-kernel_2.13",
+                    "version": "2.8.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "cats-kernel_2.13",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-kernel_2.13/2.8.0/cats-kernel_2.13-2.8.0.jar"
+                        },
+                        {
+                            "name": "cats-kernel_2.13",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-kernel_2.13/2.8.0/cats-kernel_2.13-2.8.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.scala-lang",
+                    "name": "scala-compiler",
+                    "version": "2.13.13",
+                    "configurations": "optional",
+                    "artifacts": [
+                        {
+                            "name": "scala-compiler",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.13.13/scala-compiler-2.13.13.jar"
+                        },
+                        {
+                            "name": "scala-compiler",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.13.13/scala-compiler-2.13.13-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.scala-lang",
+                    "name": "scala-library",
+                    "version": "2.13.13",
+                    "configurations": "optional",
+                    "artifacts": [
+                        {
+                            "name": "scala-library",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.13/scala-library-2.13.13.jar"
+                        },
+                        {
+                            "name": "scala-library",
+                            "classifier": "sources",
+                            "path": "/Users/ismail/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.13/scala-library-2.13.13-sources.jar"
+                        }
+                    ]
+                }
+            ]
+        },
+        "tags": [
+            "library"
+        ]
+    }
+}
