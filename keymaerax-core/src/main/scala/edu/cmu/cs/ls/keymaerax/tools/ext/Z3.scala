@@ -91,6 +91,11 @@ final class Z3 extends Tool with QETacticTool with SimplificationTool with ToolO
       try { parser(z3Output) }
       catch { case _: ConversionException => expr }
     }
+
+  }
+  def solveSMT(smtCode: String): String = {
+    val z3Output = z3.runZ3Smt(smtCode, "GenericSolver", getOperationTimeout)
+    z3Output
   }
 
   /** @inheritdoc */

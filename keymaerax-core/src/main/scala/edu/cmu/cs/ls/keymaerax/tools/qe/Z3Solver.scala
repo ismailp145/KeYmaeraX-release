@@ -16,6 +16,7 @@ import java.util.concurrent.ConcurrentHashMap
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent._
 import scala.sys.process._
+import edu.cmu.cs.ls.keymaerax.cli.KeYmaeraX.exit
 
 /**
  * Starts a Z3 process with the binary at `z3Path`, converting KeYmaera X datastructures to SMT-Lib format with
@@ -102,7 +103,8 @@ class Z3Solver(val z3Path: String, val converter: SMTConverter) extends ToolOper
       if (exitQIdx != qidx) throw ToolCommunicationException(
         "Expected query index on tool exit to match input query index, but exit " + exitQIdx + " != " + qidx
       )
-      if (exitVal == 0) {
+
+      if (exitVal == 0) { // added exit val == 1 to handle the case where Z3 returns unknown
         if (result._1 == qidx) result._2
         else throw ToolCommunicationException(
           "Expected result query index to match input query index, but result " + result._1 + " != " + qidx
