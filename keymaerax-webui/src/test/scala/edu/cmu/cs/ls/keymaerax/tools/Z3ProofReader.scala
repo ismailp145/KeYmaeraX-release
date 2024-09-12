@@ -75,13 +75,14 @@ object Z3ProofReader {
           SSymbol("not") :: SList(SSymbol("or") :: SSymbol(p) :: SList(SSymbol("not") :: SSymbol(q) :: Nil) :: Nil) ::
           Nil
         ) => {
+
       // handle the not-or case
       ???
     }
-    case SList(sexprs) => {
-      // handle the general SList case
-      ???
-    }
+    case SList(SList(SSymbol("proof") :: steps :: Nil) :: Nil) => convertProof(steps)
+
+    case SList(SSymbol("let") :: SList(SList(name) :: expr) :: steps :: Nil) =>
+      convertProof(steps)(defs + (name.toString -> DefaultSMTConverter(expr)))
 
     case SString(value) => {
       // handle the SString case
