@@ -22,6 +22,8 @@ import java.io.{Reader, StringReader}
 import scala.collection.mutable.ListBuffer
 
 import edu.cmu.cs.ls.keymaerax.pt.ProvableSig
+import edu.cmu.cs.ls.keymaerax.core.{Term => KeYmaeraTerm, _}
+import smtlib.trees.Terms._
 
 /** Reads [[Proofs]]s from SMT-LIB format: converts every (assert X) statement into an expression. */
 object Z3ProofReader {
@@ -47,11 +49,20 @@ object Z3ProofReader {
   /** Converts a formula. */
 
   def convertProof(t: SExpr)(implicit defs: Map[String, Expression]): ProvableSig = t match {
+
     case Let(binding, bindings, term) => {
-      // handle the Let case
-
       ???
+      // val bindingsMap = bindings.collect {
+      //   case SList(SList(SSymbol(name) :: expr :: Nil) :: Nil) if expr.isInstanceOf[SExpr] =>
+      //     (name, convertProof(expr.asInstanceOf[SExpr]))
 
+      //     val bindingsMap = bindings
+      //       .collect { case (name: SSymbol, expr: SExpr) => (name.toString, convertProof(expr)) }
+      //       .toMap
+
+      //     val convertedTerm = convertProof(term)(defs ++ bindingsMap)
+      //     convertedTerm
+      // }
     }
     case SForall(sortedVar, sortedVars, term) => {
       // Two for all cases, one is the smtlib forall and the other is the keymaerax forall. Used Alias to differentiate
@@ -81,9 +92,11 @@ object Z3ProofReader {
     }
     case SList(SList(SSymbol("proof") :: steps :: Nil) :: Nil) => convertProof(steps)
 
-    case SList(SSymbol("let") :: SList(SList(name) :: expr) :: steps :: Nil) =>
-      convertProof(steps)(defs + (name.toString -> DefaultSMTConverter(expr)))
+    case SList(SSymbol("let") :: SList(SList(name) :: expr) :: steps :: Nil) => {
+      ???
 
+      // convertProof(steps)(defs + (name.toString -> DefaultSMTConverter(expr)))
+    }
     case SString(value) => {
       // handle the SString case
       ???
@@ -97,6 +110,32 @@ object Z3ProofReader {
 
   // TODO
   // first one is checking to see if it starts with a proof
+
+  import edu.cmu.cs.ls.keymaerax.tools.qe.SMTConverter
+
   // use the SMTConverters methods to convert the Z3 to a keymaerax formula
+
+  import edu.cmu.cs.ls.keymaerax.core._
+
+  def convertSExprToFormula(sexpr: SExpr): Formula = sexpr match {
+    case SSymbol(symbol) => PredOf(Function(symbol, None, Real, Bool), Nothing)
+    case SList(SSymbol("not") :: arg :: Nil) => Not(convertSExprToFormula(arg))
+    case SList(SSymbol("and") :: args) => args.map(convertSExprToFormula).reduceLeft(And.apply)
+    case SList(SSymbol("or") :: args) => args.map(convertSExprToFormula).reduceLeft(Or.apply)
+    case SList(SSymbol("=>") :: left :: right :: Nil) =>
+      Imply(convertSExprToFormula(left), convertSExprToFormula(right))
+
+    case SList(SSymbol("=") :: left :: right :: Nil) => Equal(convertSExprToTerm(left), convertSExprToTerm(right))
+    // handle other cases
+  }
+  def convertSExprToTerm(sexpr: SExpr): KeYmaeraTerm = sexpr match {
+    case SSymbol(symbol) => Variable(symbol)
+    case SList(SSymbol("-") :: arg :: Nil) => Neg(convertSExprToTerm(arg))
+    case SList(SSymbol("+") :: args) => args.map(convertSExprToTerm).reduceLeft(Plus.apply)
+    case SList(SSymbol("*") :: args) => args.map(convertSExprToTerm).reduceLeft(Times.apply)
+    case SList(SSymbol("/") :: left :: right :: Nil) => Divide(convertSExprToTerm(left), convertSExprToTerm(right))
+
+    // handle other cases
+  }
 
 }
