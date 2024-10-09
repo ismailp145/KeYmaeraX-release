@@ -51,74 +51,85 @@ object Z3ProofReader {
 
   def convertProof(t: SExpr)(implicit defs: Map[String, Expression]): ProvableSig = t match {
 
-    // case Let(VarBinding(name, term), bindings, remainder) => {
-    //   // println(bindings)
-    //   // var x = convertSExprToFormula(term)
-    //   // convertProof(remainder)(defs + (name.toString -> x))
-    //   ???
-    // }
+    case Let(VarBinding(name, term), bindings, remainder) => {
+      println(bindings)
+      var x = convertSExprToFormula(term)
+      convertProof(remainder)(defs + (name.toString -> x))
+      println(s"Matched let binding: $name with expression: $x")
+      ???
+    }
+    case Let(binding, bindings, term) => {
+      println(bindings)
+      var x = convertSExprToFormula(term)
+      convertProof(term)(defs + (binding.toString -> x))
+      println(s"Matched let binding: $binding with expression: $x")
+      ???
+    }
+    // Use `convertSExprToFormula` to convert the binding expression (conjunction in this case)
+    // Match a `let` expression binding a variable ($x26) to a conjunction (and) of two predicates (_p_P and _p_Q)
+    case SList(SSymbol("let") :: SList(SList(SSymbol(x) :: bindingExpr :: Nil) :: Nil) :: Nil) =>
+      // Use `convertSExprToFormula` to convert the binding expression (conjunction in this case)
+      val formula = convertSExprToFormula(bindingExpr)
+      // convertProof(formula)(defs + (x -> formula))
+      println(s"Matched let binding: $x with expression: $formula")
+      ???
 
-    /** Two ForAll, one is the SMT-Lib and the other is the keymaerax. Used Alias to differentiate */
-    // case SForall(sortedVar, sortedVars, term) => { ??? }
+    case SList(SSymbol("let") :: SList(names :: x :: Nil) :: remainder) => {
+      val formula = convertSExprToFormula(x)
+      convertProof(names)(defs + (names.toString -> formula))
+      println(s"Matched let binding: $names with expression: $formula")
+      ???
+    }
+    case SList(
+          SSymbol("let") :: SList(
+            SList(SSymbol(x) :: SList(SSymbol(y) :: SSymbol("_p_P") :: SSymbol("_p_Q") :: Nil) :: Nil) :: Nil
+          ) :: Nil
+        ) => {
+      println(s"Matched let binding: $x with expression: $y")
+      ???
+    }
 
-    // case SList(SSymbol("proof") :: rest) => {
-    //   println(rest)
-    //   ???
-    // }
-    // case SList(SSymbol("and") :: SSymbol(p) :: SSymbol(q) :: Nil) => { ??? }
+    // May want to store the formula in another structure or handle it elsewhere
+
+    case SList(
+          SSymbol("let") ::
+          SList(SSymbol("$x26") :: SList(SSymbol("and") :: SSymbol("_p_P") :: SSymbol("_p_Q") :: Nil) :: Nil) :: Nil
+        ) =>
+      println("Matched let binding")
+      ???
+
+    case SList(
+          List(
+            SSymbol("let"),
+            SList(List(SList(List(SSymbol("$x26"), SList(List(SSymbol("and"), SSymbol("_p_P"), SSymbol("_p_Q"))))))),
+          )
+        ) => {
+      print("Matched let binding")
+      ???
+    }
 
     // case SList(
-    //       SSymbol("not") :: SList(SSymbol("or") :: SSymbol(p) :: SList(SSymbol("not") :: SSymbol(q) :: Nil) :: Nil) ::
-    //       Nil
-    //     ) => { ??? }
+    //       SSymbol("let") :: SList(
+    //         SList(SSymbol("$x26") :: SList(SSymbol("and") :: SSymbol("_p_P") :: SSymbol("_p_Q") :: Nil) :: Nil) :: Nil
+    //       )
+    //     ) => {
+    //   println("Matched let binding")
+    //   ???
+    // }
 
+    case SList(SSymbol("let") :: SList(names :: x :: Nil) :: remainder) => {
+      val formula = convertSExprToFormula(x)
+      convertProof(names)(defs + (names.toString -> formula))
+      println(s"Matched let binding: $names with expression: $formula")
+      ???
+    }
     case GetProofResponseSuccess(steps) => {
       convertProof(steps)
       ???
-
     }
-    //   // convertProof(steps)(defs + (name.toString -> DefaultSMTConverter(expr)))
-    // case SList(SSymbol("let") :: SList(names :: defs :: Nil) :: rest) => {
-
-    //   println(names)
-    //   println(defs)
-    //   println(rest)
-    //   ???
-    // }
-
-    // case SList(SSymbol("let") :: SList(SList(name) :: expr) :: steps :: Nil) => {
-    //   println(name)
-    //   println(expr)
-    //   println(steps)
-    //   ???
-
-    // }
-
-    // case SList(
-    //       List(
-    //         SSymbol("let"),
-    //         SList(List(SList(List(SSymbol(x), SList(List(SSymbol("and"), SSymbol("_p_P"), SSymbol("_p_Q"))))))),
-    //       )
-    //     ) => {
-    //   println(s"Matched let binding: $x for conjunction of _p_P and _p_Q")
-    //   ???
-    // }
-    // case SList(
-    //       SSymbol("let") :: SList(
-    //         SList(SSymbol(x) :: SList(SSymbol("and") :: SSymbol("_p_P") :: SSymbol("_p_Q") :: Nil) :: Nil) :: Nil
-    //       ) :: Nil
-    //     ) => {
-    //   // Handle the case of let binding and return an appropriate ProvableSig
-
-    //   println(s"Matched let binding: $x for conjunction of _p_P and _p_Q")
-    //   ???
-    // }
-
-    // case SString(value) => { ??? }
 
     case _ => { throw new MatchError(t) }
   }
-  // TODO
 
   /** had to create an sexpr to term method because Equal takes in terms */
   def convertSExprToFormula(sexpr: SExpr): Formula = sexpr match {
