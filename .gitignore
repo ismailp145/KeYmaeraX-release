@@ -14,3 +14,6 @@ target/
 
 # Files required for building that should not be committed
 /local.properties
+.metals
+.java-version
+.bloop

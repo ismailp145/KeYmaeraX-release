@@ -52,104 +52,31 @@ object Z3ProofReader {
 
   def convertProof(t: SExpr)(defs: Map[String, Expression], lemma: Map[String, ProvableSig]): ProvableSig = t match {
 
-    case Let(VarBinding(name, term), bindings, remainder) => {
-      println(bindings)
-      var x = convertSExprToFormula(term)
-      convertProof(remainder)(defs + (name.toString -> x), lemma)
-      println(s"Matched let binding: $name with expression: $x")
-      ???
-    }
-    // case Let(binding, bindings, term) => {
-    //   println(bindings)
-    //   var x = convertSExprToFormula(term)
-    //   convertProof(term)(defs + (binding.toString -> x))
-    //   println(s"Matched let binding: $binding with expression: $x")
-    //   ???
-    // }
-
     case SList(SList(SSymbol("proof") :: steps :: Nil) :: Nil) => {
-      println("entered first proof")
+      println("Entered Proof")
       convertProof(steps)(defs, lemma)
     }
 
-    // Use `convertSExprToFormula` to convert the binding expression (conjunction in this case)
-    // Match a `let` expression binding a variable ($x26) to a conjunction (and) of two predicates (_p_P and _p_Q)
-    // case SList(SSymbol("let") :: SList(SList(SSymbol(x) :: bindingExpr :: Nil) :: Nil) :: Nil) =>
-    //   // Use `convertSExprToFormula` to convert the binding expression (conjunction in this case)
-    //   val formula = convertSExprToFormula(bindingExpr)
-    //   // convertProof(formula)(defs + (x -> formula))
-    //   println(s"Matched let binding: $x with expression: $formula")
-    //   ???
-
-    // case SList(SSymbol("let") :: SList(names :: x :: Nil) :: remainder) => {
-    //   val formula = convertSExprToFormula(x)
-    //   convertProof(names)(defs + (names.toString -> formula))
-    //   println(s"Matched let binding: $names with expression: $formula")
-    //   ???
-    // }
-    // case SList(
-    //       SSymbol("let") :: SList(
-    //         SList(SSymbol(x) :: SList(SSymbol(y) :: SSymbol("_p_P") :: SSymbol("_p_Q") :: Nil) :: Nil) :: Nil
-    //       ) :: Nil
-    //     ) => {
-    //   println(s"Matched let binding: $x with expression: $y")
-    //   ???
-    // }
-
-    // May want to store the formula in another structure or handle it elsewhere
-
-    // case SList(
-    //       SSymbol("let") ::
-    //       SList(SSymbol("$x26") :: SList(SSymbol("and") :: SSymbol("_p_P") :: SSymbol("_p_Q") :: Nil) :: Nil) :: Nil
-    //     ) =>
-    //   println("Matched let binding")
-    //   ???
-
-    // case SList(
-    //       List(
-    //         SSymbol("let"),
-    //         SList(List(SList(List(SSymbol("$x26"), SList(List(SSymbol("and"), SSymbol("_p_P"), SSymbol("_p_Q"))))))),
-    //       )
-    //     ) => {
-    //   print("Matched let binding")
-    //   ???
-    // }
-
-    // case SList(
-    //       SSymbol("let") :: SList(
-    //         SList(SSymbol("$x26") :: SList(SSymbol("and") :: SSymbol("_p_P") :: SSymbol("_p_Q") :: Nil) :: Nil) :: Nil
-    //       )
-    //     ) => {
-    //   println("Matched let binding")
-    //   ???
-    // }
-
-    // case SList(SSymbol("let") :: SList(names :: x :: Nil) :: remainder) => {
-    //   val formula = convertSExprToFormula(x)
-    //   convertProof(names)(defs + (names.toString -> formula))
-    //   println(s"Matched let binding: $names with expression: $formula")
-    //   ???
-    // }
-
-    // case SList(List(SSymbol(let), SList(List(SList(List(SSymbol(name), SList(List(and, pred, res)))))))) => {
-    //   val x = convertSExprToFormula(and)
-
-    //   println("Matched let binding")
-    //   ???
-    // }
-
     case SList(SSymbol("let") :: SList(vars) :: rest :: Nil) => {
-      print("entered Let")
+      print("entered Let: ")
       println(vars)
       convertProof(rest)(defs, lemma)
+
       // match on vars
       // seperate $ and @ names for lemma.
 
     }
-    case GetProofResponseSuccess(steps) => {
-      convertProof(steps)(defs, lemma)
+    case SList(SSymbol(name) :: SList(rest) :: remainder) => {
+      println(s"Entered Name, $name")
       ???
     }
+     case SList(SSymbol(name) :: remainder) => {
+      println(s"Entered SSymbol Name, $name")
+      // supposedly this one may have worked
+      ???
+    }
+
+    case GetProofResponseSuccess(steps) => { convertProof(steps)(defs, lemma) }
 
     case _ => { throw new MatchError(t) }
   }
@@ -176,17 +103,5 @@ object Z3ProofReader {
     case SList(SSymbol("/") :: left :: right :: Nil) => Divide(convertSExprToTerm(left), convertSExprToTerm(right))
     // handle other cases
   }
-
-  // def convertSExprToProvableSig(sexpr: SExpr)(implicit defs: Map[String, Expression]): ProvableSig = {
-
-  // convertSExprToFormula(sexpr Sexpr) match {
-  //   case formula: Formula =>
-  //     val sequent = Sequent(IndexedSeq(), IndexedSeq(formula))
-  //     ProvableSig.startProof(sequent)
-  //   case _ => throw new ConversionException("Invalid SMT-LIB expression")
-  // }
-  // }
-  // def convertSExprToFormula(sexpr: SExpr)(implicit defs: Map[String, Expression]): ProvableSig =
-  //   sexpr match { case SSymbol(symbol) => PredOf(Function(symbol, None, Real, Bool), Nothing) }
 
 }
