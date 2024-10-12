@@ -117,19 +117,30 @@ class SMTProofsTest extends TacticTestBase {
     implicationFormula should not be null
   }
 
-  // issue was produce-proofs not produce-proof
   import edu.cmu.cs.ls.keymaerax.tools.ext.Z3ProofReader
+
   "Z3" should "execute SMT Proof" in withZ3 { tool =>
     val implicationFormula = "(P&Q) -> P".asFormula
     val ending = s"""(set-option :produce-proofs true) 
                     |${DefaultSMTConverter(implicationFormula)}
                     |(get-proof)""".stripMargin
-    println(tool.solveSMT((ending)))
-    println(DefaultSMTConverter(implicationFormula))
-    // println(Z3ProofReader.readFml(tool.solveSMT(ending)))
 
+    // println(ending)
+
+    // val newEnding = tool.solveSMT(ending)
+    // println(newEnding)
+    // val newEndingWithoutUnsat = println(SmtLibReader.readAssert((newEnding)))
+
+    val ending2 = tool.solveSMT(ending)
+    // split the proof into a list of strings
+
+    val proof = ending2.split("\n")
+    val result :: proofsteps = proof.toList
+    // println(result)
+    // println(proofsteps.mkString("\n"))
+    // println(Z3ProofReader.readProof(proofsteps.mkString("\n")))
+    Z3ProofReader.readProof(proofsteps.mkString("\n"))
+    /* remove the first line --proof result */
   }
-  tools = tool.solveSMT(ending)
 
-  // the issue is withZ3. For some reason the SMT solver is not correct/ giving the correct output.
 }
