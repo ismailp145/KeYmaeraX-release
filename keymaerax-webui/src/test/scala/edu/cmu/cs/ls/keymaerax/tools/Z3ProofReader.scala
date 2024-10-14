@@ -58,21 +58,46 @@ object Z3ProofReader {
     }
 
     case SList(SSymbol("let") :: SList(vars) :: rest :: Nil) => {
-      print("entered Let: ")
-      println(vars)
-      convertProof(rest)(defs, lemma)
+      println(s"Entered Let: $vars")
 
+      val newVars = vars.head
+      println(newVars)
+      vars match {
+        case _ => {
+          print(vars)
+          ???
+        }
+      }
+      // convertProof(vars)(defs,lemma)
+      convertProof(rest)(defs, lemma)
       // match on vars
       // seperate $ and @ names for lemma.
-
     }
+
     case SList(SSymbol(name) :: SList(rest) :: remainder) => {
       println(s"Entered Name, $name")
       ???
     }
-     case SList(SSymbol(name) :: remainder) => {
-      println(s"Entered SSymbol Name, $name")
-      // supposedly this one may have worked
+    case SList(SSymbol(name) :: remainder :: Nil) => {
+      println("Entered Eeneral Case")
+      ???
+    }
+
+    case SList(SSymbol(name) :: remainder) => {
+      if (name.startsWith("$")) { println("Entered $") }
+      if (name.startsWith("@")) { println("Entered @") }
+      if (name.startsWith("unit-resolution")) { println("this is Unit Res") }
+      println(s"Entered SSymbol Name, $name, $remainder")
+      // supposedly this one have worked
+      ???
+    }
+    // sl - (26, x)
+    //  x-> sl - p and q
+    //
+    case SList(SSymbol(name) :: remainder :: rest :: something) => {
+      if (name.startsWith("$")) { println("Entered $") }
+      if (name.startsWith("@")) { println("Entered @") }
+      println(s"Entered SSymbol Name, $name, $remainder")
       ???
     }
 
@@ -80,6 +105,11 @@ object Z3ProofReader {
 
     case _ => { throw new MatchError(t) }
   }
+
+  // def convertLetProof(t: SExpr)(defs: Map[String, Expression], lemma: Map[String, ProvableSig]): ProvableSig = t match {
+  //   case List(SList(vars) :: rest :: Nil) => ???
+  //   case _ => { throw new MatchError(t) }
+  // }
 
   /** had to create an sexpr to term method because Equal takes in terms */
   def convertSExprToFormula(sexpr: SExpr): Formula = sexpr match {
