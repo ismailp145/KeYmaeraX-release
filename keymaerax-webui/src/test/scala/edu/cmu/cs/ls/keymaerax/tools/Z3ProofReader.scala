@@ -26,16 +26,16 @@ import edu.cmu.cs.ls.keymaerax.core.{Term => KeYmaeraTerm, _}
 import edu.cmu.cs.ls.keymaerax.tools.qe.SMTConverter
 import smtlib.trees.CommandsResponses.GetProofResponseSuccess
 import javax.swing.plaf.synth.SynthListUI
+import edu.cmu.cs.ls.keymaerax.btactics.DerivationInfoRegistry.convert
 
 /** Reads [[Proofs]]s from SMT-LIB format: converts every (assert X) statement into an expression. */
 object Z3ProofReader {
   val USCORE: String = "uscore"
-  
+  var lemmaMap: Map[String, ProvableSig] = Map()
+  var nameMap: Map[String, Formula] = Map()
 
   /** Reads a formula. */
   def readProof(s: String): ProvableSig = readExpr(s, convertProof(_)(Map.empty, Map.empty))
-  // change to read proof
-  // return provable sig
 
   /** Reads an expression using `convert` to turn it into the desired kind. */
   private def readExpr(s: String, convert: SExpr => ProvableSig): ProvableSig = {
@@ -50,7 +50,6 @@ object Z3ProofReader {
   private def sanitize(name: String): String = { name.replace("_", USCORE) }
 
   /** Converts an SExpression. */
-
   def convertProof(t: SExpr)(defs: Map[String, Expression], lemma: Map[String, ProvableSig]): ProvableSig = t match {
 
     case SList(SList(SSymbol("proof") :: steps :: Nil) :: Nil) => {
@@ -61,51 +60,54 @@ object Z3ProofReader {
     case SList(SSymbol("let") :: SList(vars) :: rest :: Nil) => {
       println(s"Entered Let: $vars")
 
-      val newVars = vars.head
-      newVars match {
-        case SList(SSymbol(x) :: _) => {
-          if (x.startsWith("$")) {}
-          if (x.startsWith("@")) {}
+      vars.head match {
+        case SList(SSymbol(x) :: _) if (x.startsWith("$")) => {
           println(s"Extracted: $x")
+
+          // nameMap = nameMap +
+          //   (x ->
+          //     convertSExprToFormula(
+          //       vars.head
+          //     )) // want to convert the rest of the sexpr to a formula so that it can be mapped
+
         }
+        case SList(SSymbol(x) :: _) if (x.startsWith("@")) => {
+          println(s"Extracted: $x")
+          lemmaMap = lemmaMap +
+            (x -> convertProof(vars.head)(defs, lemma)) // mapping string lemma to provable sig on vars.head
+          println(lemmaMap)
+        }
+
         case _ => println("No match found")
       }
-      convertProof(rest)(defs, lemma)
-      // match on vars
-      // seperate $ and @ names for lemma.
-    }
 
-    case SList(SSymbol(name) :: SList(rest) :: remainder) => {
-      println(s"Entered Name, $name")
-      ???
-    }
-    case SList(SSymbol(name) :: remainder :: Nil) => {
-      println("Entered Eeneral Case")
-      ???
+      convertProof(rest)(defs, lemma)
     }
 
     case SList(SSymbol(name) :: remainder) => {
-      if (name.startsWith("$")) { println("Entered $") }
-      if (name.startsWith("@")) { println("Entered @") }
-      if (name.startsWith("unit-resolution")) { println("this is Unit Res") } // testing unit res
-      println(s"Entered SSymbol Name, $name, $remainder")
-      // supposedly this one have worked
-      ???
+      println(s"Entered SSymbol Name 1: $name, $remainder")
+      convertProof(remainder.head)(defs, lemma)
     }
 
-    case SList(SSymbol(name) :: remainder :: rest :: something) => {
-      if (name.startsWith("$")) { println("Entered $") }
-      if (name.startsWith("@")) { println("Entered @") }
-      println(s"Entered SSymbol Name, $name, $remainder")
+    case SList(SSymbol(name) :: remainder :: Nil) => {
+      println(s"Entered SSymbol Name 2: $name, $remainder")
+      convertProof(remainder)(defs, lemma)
+    }
+
+    case SSymbol(name) if name.startsWith("$") => {
+      // TO DO NEED TO FIX
+      print(s"This is name: $name")
+      // nameMap(name) // so that it can return formula but need to convert to provable sig
       ???
     }
+    case SSymbol(name) if name.startsWith("@") => lemmaMap(name) // so that it can return provable sig
 
     case GetProofResponseSuccess(steps) => { convertProof(steps)(defs, lemma) }
 
     case _ => { throw new MatchError(t) }
   }
 
-  /** had to create an sexpr to term method because Equal takes in terms */
+  /** Converts SExpression to Formula */
   def convertSExprToFormula(sexpr: SExpr): Formula = sexpr match {
 
     case SSymbol(symbol) => PredOf(Function(symbol, None, Real, Bool), Nothing)
