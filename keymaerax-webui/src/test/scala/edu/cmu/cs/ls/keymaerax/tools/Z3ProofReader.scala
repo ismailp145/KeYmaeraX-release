@@ -30,6 +30,7 @@ import javax.swing.plaf.synth.SynthListUI
 /** Reads [[Proofs]]s from SMT-LIB format: converts every (assert X) statement into an expression. */
 object Z3ProofReader {
   val USCORE: String = "uscore"
+  
 
   /** Reads a formula. */
   def readProof(s: String): ProvableSig = readExpr(s, convertProof(_)(Map.empty, Map.empty))
@@ -61,14 +62,14 @@ object Z3ProofReader {
       println(s"Entered Let: $vars")
 
       val newVars = vars.head
-      println(newVars)
-      vars match {
-        case _ => {
-          print(vars)
-          ???
+      newVars match {
+        case SList(SSymbol(x) :: _) => {
+          if (x.startsWith("$")) {}
+          if (x.startsWith("@")) {}
+          println(s"Extracted: $x")
         }
+        case _ => println("No match found")
       }
-      // convertProof(vars)(defs,lemma)
       convertProof(rest)(defs, lemma)
       // match on vars
       // seperate $ and @ names for lemma.
@@ -86,14 +87,12 @@ object Z3ProofReader {
     case SList(SSymbol(name) :: remainder) => {
       if (name.startsWith("$")) { println("Entered $") }
       if (name.startsWith("@")) { println("Entered @") }
-      if (name.startsWith("unit-resolution")) { println("this is Unit Res") }
+      if (name.startsWith("unit-resolution")) { println("this is Unit Res") } // testing unit res
       println(s"Entered SSymbol Name, $name, $remainder")
       // supposedly this one have worked
       ???
     }
-    // sl - (26, x)
-    //  x-> sl - p and q
-    //
+
     case SList(SSymbol(name) :: remainder :: rest :: something) => {
       if (name.startsWith("$")) { println("Entered $") }
       if (name.startsWith("@")) { println("Entered @") }
@@ -105,11 +104,6 @@ object Z3ProofReader {
 
     case _ => { throw new MatchError(t) }
   }
-
-  // def convertLetProof(t: SExpr)(defs: Map[String, Expression], lemma: Map[String, ProvableSig]): ProvableSig = t match {
-  //   case List(SList(vars) :: rest :: Nil) => ???
-  //   case _ => { throw new MatchError(t) }
-  // }
 
   /** had to create an sexpr to term method because Equal takes in terms */
   def convertSExprToFormula(sexpr: SExpr): Formula = sexpr match {
