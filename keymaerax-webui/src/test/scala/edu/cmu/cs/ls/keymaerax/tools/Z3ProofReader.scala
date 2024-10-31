@@ -73,11 +73,13 @@ object Z3ProofReader {
           convertProof(rest)(nameMap, lemma)
         }
 
-        case SList(SSymbol(x) :: y) if (x.startsWith("@")) => {
-          println(s"Extracted Lemma : $x , $y")
+        case SList(SSymbol(x) :: y :: Nil) if (x.startsWith("@")) => {
+          println(s"Extracted Lemma : $x")
+          // println("y = \n" + y.mkString("\n"))
+          println("y = " + y)
 
           var lemmaMap = lemma +
-            (x -> convertProof(vars.head)(defs, lemma)) // mapping string lemma to provable sig on vars.head
+            (x -> convertProof(y)(defs, lemma)) // mapping string lemma to provable sig on vars.head
           println(lemmaMap)
           convertProof(rest)(defs, lemmaMap)
 
@@ -91,25 +93,25 @@ object Z3ProofReader {
     }
     // case SList(SSymbol("asserted") :: remainder) => { ??? }
 
-    case SList(SSymbol(name) :: remainder) => {
-      println(s"Entered SSymbol Name 1: $name, $remainder")
-      convertProof(remainder.head)(defs, lemma)
-    }
+    // case SList(SSymbol(name) :: remainder) => {
+    //   println(s"Entered SSymbol Name 1: $name, $remainder")
+    //   convertProof(remainder.head)(defs, lemma)
+    // }
 
-    case SList(SSymbol(name) :: remainder :: Nil) => {
-      println(s"Entered SSymbol Name 2: $name, $remainder")
-      convertProof(remainder)(defs, lemma)
-    }
+    // case SList(SSymbol(name) :: remainder :: Nil) => {
+    //   println(s"Entered SSymbol Name 2: $name, $remainder")
+    //   convertProof(remainder)(defs, lemma)
+    // }
 
     case GetProofResponseSuccess(steps) => { convertProof(steps)(defs, lemma) }
 
     // case SSymbol(name) if name.startsWith("$") => {
-    //   // TO DO NEED TO FIX
-    //   print(s"This is name: $name")
-    // }
-    // nameMap(name) // so that it can return formula but need to convert to provable sig
+    // TO DO NEED TO FIX
+    // print(s"This is name: $name")
+    //   nameMap(name) // so that it can return formula but need to convert to provable sig
     // ???
     // }
+
     // case SSymbol(name) if name.startsWith("@") => lemmaMap(name) // so that it can return provable sig
     case y => {
       println(y)
