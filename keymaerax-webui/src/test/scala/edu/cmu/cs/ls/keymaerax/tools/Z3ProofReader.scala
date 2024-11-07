@@ -60,14 +60,22 @@ object Z3ProofReader {
 
     case SList(SSymbol("let") :: SList(vars) :: rest :: Nil) => {
       println(s"Entered Let: $vars")
-      
+
       vars.head match {
-        
+
         case SList(SSymbol(x) :: y :: Nil) if (x.startsWith("$")) => {
           println(s"Extracted Variable: $x , $y")
           hashMap += (x -> y)
-          var nameMap = defs + (x -> convertSExprToFormula( y, defs)) // want to convert the rest of the sexpr to a formula so that it can be mapped
+          var nameMap = defs +
+            (x ->
+              convertSExprToFormula(
+                y,
+                defs,
+              )) // want to convert the rest of the sexpr to a formula so that it can be mapped
+          println("Printing NameMap", nameMap)
+          hashMap += (x -> nameMap)
           convertProof(rest)(nameMap, lemma)
+
         }
 
         case SList(SSymbol(x) :: y :: Nil) if (x.startsWith("@")) => {
@@ -79,15 +87,29 @@ object Z3ProofReader {
           var lemmaMap = lemma +
             (x -> convertProof(y)(defs, lemma)) // mapping string lemma to provable sig on vars.head
           println(lemmaMap)
+          hashMap += (x -> lemmaMap)
           convertProof(rest)(defs, lemmaMap)
         }
         case _ =>
           println("No match found")
           convertProof(rest)(defs, lemma)
       }
-
     }
-    // case SList(SSymbol("asserted") :: remainder) => { ??? }
+    case SList(SSymbol("asserted") :: remainder) => {
+      println(s"Entered Asserted: $remainder")
+      ???
+    }
+
+    case SList(SSymbol(name) :: remainder) if (name == "mp") => {
+      println(s"Entered mp: ${remainder.mkString("\n")}")
+      ???
+    }
+
+    // case SList(SSymbol("not") :: remainder :: Nil) => {
+    //   println(s"Entered Not: $remainder")
+    //   Not(convertProof(remainder)(defs, lemma))
+    //   ???
+    // }
 
     case SList(SSymbol(name) :: remainder) => {
       println(s"Entered SSymbol Name 1: $name, $remainder")
@@ -129,5 +151,5 @@ object Z3ProofReader {
     case SList(SSymbol("*") :: args) => args.map(convertSExprToTerm).reduceLeft(Times.apply)
     case SList(SSymbol("/") :: left :: right :: Nil) => Divide(convertSExprToTerm(left), convertSExprToTerm(right))
     // handle other cases
-  } 
+  }
 }
